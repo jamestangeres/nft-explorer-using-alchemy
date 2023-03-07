@@ -1,7 +1,9 @@
 const NftCard = ({ image, id, title, address, description, attributes }) => {
     return (
         <div className="w-1/4 mr-3 mb-4 bg-slate-100 rounded-md" >
-            <img className='w-full rounded-t-md' key={id} src={image}></img>
+            {/* <img className='w-full rounded-t-md' key={id} src={image}></img> */}
+            <img className='w-full rounded-t-md' key={id} src={image} alt={title || ""}></img>
+
             <div className="p-3">
                 <div className="flex mb-3">
                     <div className="flex-grow">
@@ -9,7 +11,7 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                         <p>{`${id.slice(0, 4)}...${id.slice(id.length - 4)}`}</p>
                     </div>
                     <div className="flex mr-3">
-                        <a target="_blank" className="text-blue-700" href={`https://etherscan.io/token/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
+                        <a target="_blank" rel="noreferrer" className="text-blue-700" href={`https://etherscan.io/token/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
                     </div>
                 </div>
                 <p>{description? description.slice(0, 200) : "No Description"}</p>
